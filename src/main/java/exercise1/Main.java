@@ -1,0 +1,10 @@
+package exercise1;
+
+public class Main {
+
+    public static void main(String[] args) {
+        //Main Method
+      Song song = new Song("ITALODISCO", 199, "The Kolors");
+      System.out.println(song);
+    }
+}
