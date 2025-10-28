@@ -3,9 +3,11 @@ package exercise1;
 public class Song {
 
     //Declare Vars
-    private String titel;
-    private int duration;
-    private String artist;
+    String titel;
+    int duration;
+    String artist;
+    int minutes;
+    int seconds;
 
     //Create Constructor
     public Song(String titel, int duration, String artist) {
@@ -15,13 +17,21 @@ public class Song {
     }
 
     public String songTime() {
-      //Change seconds into X Minuten x Sekunden
-      return "";
+        //Change seconds into X Minuten x Sekunden
+
+
+        minutes = duration / 60;
+
+        seconds = duration - minutes * 60;
+
+
+        return minutes + " M " + "and " + seconds + " S ";
     }
 
     @Override
     public String toString() {
         //Change toString Method output
-        return "";
+        return "the song " + titel + " from the artist " + artist + " " +
+                "is this many " + songTime() + "long";
     }
 }
