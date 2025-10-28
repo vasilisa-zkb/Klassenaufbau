@@ -18,8 +18,6 @@ public class Song {
 
     public String songTime() {
         //Change seconds into X Minuten x Sekunden
-
-
         minutes = duration / 60;
 
         seconds = duration - minutes * 60;
