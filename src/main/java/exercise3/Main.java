@@ -17,6 +17,7 @@ public class Main {
         car.refuel(10);
         System.out.println("Statistics after drive and refuel" + car);
         System.out.println(" ");
+
         System.out.println("Statistics before drive and refuel" + car01);
         System.out.println( "| Distance to drive 100 and Refuel 70 | ");
         car01.drive(100);
