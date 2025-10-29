@@ -58,12 +58,11 @@ public class Car {
     }
 
 
-    public void drive(int distance) {
+    public int drive(int distance) {
         //do stuff
         double maxdistance = fuelLevel / fuelConsumption;
         //maxdistance = maxdistance;
-        System.out.println("Max distance: " + maxdistance);
-
+       System.out.println("Max distance: " + maxdistance);
         if (distance > maxdistance) {
             fuelLevel = 0;
             this.mileage = Math.round((this.mileage + maxdistance) * 100.0) / 100.0;
@@ -73,13 +72,13 @@ public class Car {
             this.mileage = Math.round((this.mileage + distance) * 100.0) / 100.0;
         }
 
-        System.out.println(fuelLevel);
-        System.out.println(mileage);
+        //System.out.println(fuelLevel + " fuelLevel");
+        //System.out.println(mileage+ " mileage");
+        return distance;
     }
 
-    public void refuel(int amount) {
+    public int refuel(int amount) {
         //do stuff
-
         double newfuelLevel = fuelLevel + amount;
 
         if (newfuelLevel > fuelCapacity) {
@@ -87,6 +86,7 @@ public class Car {
         } else {
             fuelLevel = newfuelLevel;
         }
+        return amount;
     }
     //add toString
     @Override
