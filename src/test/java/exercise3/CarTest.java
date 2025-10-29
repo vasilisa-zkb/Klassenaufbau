@@ -8,49 +8,47 @@ import org.junit.jupiter.api.Test;
 import exercise3.Car;
 
 class CarTest {
-
-
   private Car car;
 
   @BeforeEach
   public void setUp() {
-      car = new Car("ZH420", 62000, 60, 0.077, 50);
+      car = new Car("ZH420", 50, 62000, 0.077,60 );
     }
 
     @Test
     public void testRefuel() {
       car.refuel(10);
-      assertEquals(60, car.fuelLevel);
+      assertEquals(60, car.getFuelLevel());
     }
 
     @Test
     public void testRefuelOverLimit() {
     car.refuel(30);
-    assertEquals(60, car.fuelLevel);
+    assertEquals(60, car.getFuelLevel());
     }
 
     @Test
     public void testDrive() {
       car.drive(100);
-      assertEquals(42.3, car.fuelLevel);
-      assertEquals(62100, car.mileage);
+      assertEquals(42.3, car.getFuelLevel());
+      assertEquals(62100, car.getMileage());
     }
 
   @Test
   public void testDriveOverLimit() {
     car.drive(1000);
-    assertEquals(0, car.fuelLevel);
-    assertEquals(62649.35, car.mileage);
+    assertEquals(0, car.getFuelLevel());
+    assertEquals(62649.35, car.getMileage());
   }
 
   @Test
   public void testToString() {
     assertEquals("Car{" +
-        "licensePlate='" + car.licensePlate + '\'' +
-        ", mileage=" + car.mileage +
-        ", fuelConsumption=" + car.fuelConsumption +
-        ", fuelCapacity=" + car.fuelCapacity +
-        ", fuelLevel=" + car.fuelLevel +
+        "licensePlate='" + car.getLicensePlate() + '\'' +
+        ", mileage=" + car.getMileage() +
+        ", fuelConsumption=" + car.getFuelConsumption() +
+        ", fuelCapacity=" + car.getFuelCapacity() +
+        ", fuelLevel=" + car.getFuelLevel() +
         '}', car.toString());
   }
 
